@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 // TOOLTIP	
-	$('.tooltip').tooltipster({
+    $('.tooltipster').tooltipster({
         maxWidth: 250,
         offsetX: -1,
         offsetY: -3
