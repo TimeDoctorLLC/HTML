@@ -10,26 +10,23 @@
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<!-- style -->
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" media="screen">
 	<link rel="stylesheet" href="css/style.min.css" media="screen">
 	<link rel="stylesheet" href="css/tooltipster.css" media="screen">
+	<link rel="stylesheet" href="css/responsive.css" media="screen">
 	<!-- // style -->
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/jquery.jclock.js"></script>
+	<script src="js/jquery.tooltipster.min.js"></script>
+	<script src="js/jquery.sorttable.min.js"></script>
+	<script src="js/main.js"></script>
 </head>
 <body>
 <div id="wrapper" ng-app="dashApp">
 <!-- navigation -->
 	<div class="navbar navbar-static-top">
 		<div class="navbar-inner">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
 			<a class="brand" href="/"><img src="images/logo-timedoctor.png" width="31" height="29" alt="TimeDoctor"></a>
 			<!-- main navigation -->
 			<ul class="nav">
@@ -78,31 +75,29 @@
 				</li>
 			</ul> 
 			<!-- // main navigation -->
-			<div class="nav-collapse collapse">
-				<ul class="nav navbar-list pull-right">
-				<!-- date/time -->
-					<li class="navbar-text hidden-tablet">
-						<span class="current-date"></span>
-						<span class="current-time"></span>
-					</li>
-					<li class="divider-vertical"></li>
-				<!-- // date/time -->
-				<!-- quick access -->
-					<li><a href="#"><b>Rob Rawson</b></a></li>
-					<li class="divider-vertical"></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Global Workforce <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Lorem ipsum dolor</a></li>
-							<li><a href="#">Lorem ipsum</a></li>
-							<li><a href="#">Lorem ipsum dolor sit</a></li>
-							<li><a href="#">Lorem ipsum dolor sit amet</a></li>
-							<li><a href="#">Lorem ipsum</a></li>
-						</ul>
-					</li>
-				<!-- // quick access -->
-				</ul>
-			</div>
+			<ul class="nav navbar-list pull-right">
+			<!-- date/time -->
+				<li class="navbar-text hidden-tablet">
+					<span class="current-date"></span>
+					<span class="current-time"></span>
+				</li>
+				<li class="divider-vertical hidden-tablet"></li>
+			<!-- // date/time -->
+			<!-- quick access -->
+				<li><a href="#"><b>Rob Rawson</b></a></li>
+				<li class="divider-vertical"></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Global Workforce <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Lorem ipsum dolor</a></li>
+						<li><a href="#">Lorem ipsum</a></li>
+						<li><a href="#">Lorem ipsum dolor sit</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+						<li><a href="#">Lorem ipsum</a></li>
+					</ul>
+				</li>
+			<!-- // quick access -->
+			</ul>
 		</div>
 	</div>
 <!-- // navigation -->
@@ -131,51 +126,47 @@
 	<hr>
 	<div class="container-fluid" ng-controller="UsersDailyCtrl">
 		<div class="well well-small">
-			<table id="timeline" class="table-timeline table-hover">
-			<colgroup>
-				<col width="40">
-			</colgroup>
+			<table class="table-timeline table-timeline-day table-hover table-sort">
 			<thead>
 		    	<tr>
-		    	    <th data-sort="status">... <span class="sort icon-sort"></span></th>
+		    	    <th class="head-sort" data-sort="status">... <span class="sort icon-sort"></span></th>
 		    	    <th>Names</th>
 		    	    <th>Time worked</th>
-		    	    <th class="head-time">2am</th>
-		    	    <th class="head-time">4am</th>
-		    	    <th class="head-time">6am</th>
-		    	    <th class="head-time">8am</th>
-		    	    <th class="head-time">10am</th>
-		    	    <th class="head-time">12pm</th>
-		    	    <th class="head-time">2pm</th>
-		    	    <th class="head-time">4pm</th>
-		    	    <th class="head-time">6pm</th>
-		    	    <th class="head-time">8pm</th>
-		    	    <th class="head-time">10pm</th>
-		    	    <th class="head-time">12am</th>
+		    	    <th class="head-timeline">2am</th>
+		    	    <th class="head-timeline">4am</th>
+		    	    <th class="head-timeline">6am</th>
+		    	    <th class="head-timeline">8am</th>
+		    	    <th class="head-timeline">10am</th>
+		    	    <th class="head-timeline">12pm</th>
+		    	    <th class="head-timeline">2pm</th>
+		    	    <th class="head-timeline">4pm</th>
+		    	    <th class="head-timeline">6pm</th>
+		    	    <th class="head-timeline">8pm</th>
+		    	    <th class="head-timeline">10pm</th>
+		    	    <th class="head-timeline">12am</th>
 		    	</tr>
 		    </thead>
             <tbody>
             <tr ng-repeat="user in usersdaily.list">
-                <td><div class="ico-status ico-status-{{user.status}}">{{user.status}}</div></td>
+                <td><span class="ico-status ico-status-{{user.status}}">{{user.status}}</span></td>
                 <td>
                     <div class="user-info">
                         <img src="{{user.avatar}}" alt="{{user.name}}" class="user-avatar">
                         <a href="#" class="user-name">{{user.name}}</a>
-                        <div class="statusinfo statusinfo-{{user.status}}">{{user.statusinfo}}</div>
+                        <div class="status-info status-info-{{user.status}}">{{user.statusinfo}}</div>
                     </div>
-                    <span ng-show="user.additionalstatus" class="status-additional {{user.additionalstatus.icon}}">
-                        <span class="tooltip" title="{{user.additionalstatus.text}}">&nbsp;</span>
-                    </span>
+                    <span ng-show="user.additionalstatus" class="ico-status-additional {{user.additionalstatus.icon}} tooltipster" title="{{user.additionalstatus.text}}">&nbsp;</span>
                 </td>
                 <td>{{user.totaltime}}</td>
-                <td class="time-cell"><div class="timebar-block timebar0">
-                    <div ng-repeat="time_entry in user.timeline"
-                         class="timebar {{time_entry.timetype}} tooltip"
+                <td class="cell-timeline">
+                	<div class="timebar-holder">
+                    	<div ng-repeat="time_entry in user.timeline"
+                         class="timebar timebar-{{time_entry.timetype}} tooltipster"
                          style="width: {{time_entry.length / 72}}%; left: {{time_entry.start / 72}}%;"
-                         title="<span class=timebar-message>{{time_entry.message}}</span> {{time_entry.total}}">&nbsp;</div>
-                </div>
+                         title="<p><b>{{time_entry.message}}</b></p> {{time_entry.total}}">&nbsp;</div>
+                	</div>
                 </td>
-                <td ng-repeat="n in [] | range:11" class="time-cell"></td>
+                <td ng-repeat="n in [] | range:11" class="cell-timeline"></td>
             </tr>
             </tbody>
 			</table>
@@ -192,13 +183,5 @@
 	</div>
 <!-- // footer -->
 </div><!-- // wrapper -->
-
-<!-- script -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="js/jquery.jclock.js"></script>
-<script src="js/jquery.tooltipster.min.js"></script>
-<script src="js/jquery.sorttable.min.js"></script>
-<script src="js/main.js"></script>
-<!-- // script -->
 </body>
 </html>
