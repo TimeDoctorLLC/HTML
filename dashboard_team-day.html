@@ -17,9 +17,11 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper" ng-app="dashApp">
 <!-- navigation -->
 	<div class="navbar navbar-static-top">
 		<div class="navbar-inner">
@@ -127,7 +129,7 @@
 		</div>
 	</div>
 	<hr>
-	<div class="container-fluid">
+	<div class="container-fluid" ng-controller="UsersDailyCtrl">
 		<div class="well well-small">
 			<table id="timeline" class="table-timeline table-hover">
 			<colgroup>
@@ -152,6 +154,30 @@
 		    	    <th class="head-time">12am</th>
 		    	</tr>
 		    </thead>
+            <tbody>
+            <tr ng-repeat="user in usersdaily.list">
+                <td><div class="ico-status ico-status-{{user.status}}">{{user.status}}</div></td>
+                <td>
+                    <div class="user-info">
+                        <img src="{{user.avatar}}" alt="{{user.name}}" class="user-avatar">
+                        <a href="#" class="user-name">{{user.name}}</a>
+                        <div class="statusinfo statusinfo-{{user.status}}">{{user.statusinfo}}</div>
+                    </div>
+                    <span ng-show="user.additionalstatus" class="status-additional {{user.additionalstatus.icon}}">
+                        <span class="tooltip" title="{{user.additionalstatus.text}}">&nbsp;</span>
+                    </span>
+                </td>
+                <td>{{user.totaltime}}</td>
+                <td class="time-cell"><div class="timebar-block timebar0">
+                    <div ng-repeat="time_entry in user.timeline"
+                         class="timebar {{time_entry.timetype}} tooltip"
+                         style="width: {{time_entry.length / 72}}%; left: {{time_entry.start / 72}}%;"
+                         title="<span class=timebar-message>{{time_entry.message}}</span> {{time_entry.total}}">&nbsp;</div>
+                </div>
+                </td>
+                <td ng-repeat="n in [] | range:11" class="time-cell"></td>
+            </tr>
+            </tbody>
 			</table>
 		</div>
 	</div>
@@ -168,11 +194,8 @@
 </div><!-- // wrapper -->
 
 <!-- script -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/jquery.jclock.js"></script>
-<script src="js/timeline.js"></script>
-<script src="js/test-data.js"></script>
 <script src="js/jquery.tooltipster.min.js"></script>
 <script src="js/jquery.sorttable.min.js"></script>
 <script src="js/main.js"></script>
