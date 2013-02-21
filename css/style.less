@@ -1,0 +1,97 @@
+/**
+* @project   TimeDoctor
+* @file      style.css
+* @media     screen
+* @author    Ann Sorochan
+* @date      08 February 2013
+*/
+
+@import "../bootstrap/less/variables.less";
+@import "../bootstrap/less/mixins.less";
+
+// VARIABLES
+// -------------------------
+
+/* timebar - WorkTime */
+@timebarWorkTime-startColor: 			#c7e996;
+@timebarWorkTime-midColor1: 			#6cc522;
+@timebarWorkTime-midColor2: 			#4cb50c;
+@timebarWorkTime-endColor: 				#227c00;
+@timebarWorkTime-svg: 					"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E5ZGM2OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzZjYzUyMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzRjYjUwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMjdjMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+";
+@timebarWorkTime-border: 				#6f8255 #3b5c21 #1e3c19 #3b5c21;
+/* timebar - EditedTime */
+@timebarEditedTime-startColor: 			#f7d864;
+@timebarEditedTime-midColor1: 			#efc62f;
+@timebarEditedTime-midColor2: 			#e9b810;
+@timebarEditedTime-endColor: 			#dca500;
+@timebarEditedTime-svg: 				"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZDg2NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2VmYzYyZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2U5YjgxMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkY2E1MDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+";
+@timebarEditedTime-border: 				#a79962 #88721a #735400 #88721a;
+/* status additional */
+@StatusAdditionalType1-startColor: 		#ffeb9a;
+@StatusAdditionalType1-endColor: 		#f2d45c;
+@StatusAdditionalType1-border: 			#ebca47 #e6c02c #ab8000 #e6c02c;
+@StatusAdditionalType2-startColor: 		#f3786a;
+@StatusAdditionalType2-endColor: 		#d74738;
+@StatusAdditionalType2-border: 			#d96052 #c84234 #880000 #c84234;
+
+// -------------------------
+
+html { padding-bottom: 1px; }
+html, body { height: 100%; }
+body { min-width: 1000px; }
+
+// Layout
+// -------------------------
+#wrapper { position: relative; min-height: 100%; }
+.footer-holder { height: 52px; }
+#footer { position: absolute; bottom: 0; width: 100%; height: 46px; border-top: 6px solid #d9d9d9; color: #999; line-height: 46px; }
+
+/* page head */
+.page-head-image,
+.page-head-image h1 { line-height: 57px; }
+.page-head-image h1 { margin: 0 0 0 15px; }
+
+/* navbar: dropdown menu hover */
+ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
+a.menu:after, .dropdown-toggle:after { content: none; }
+
+// Tables
+// -------------------------
+/* table: timeline */
+.table-timeline { width: 100%; }
+.table-timeline th { padding: 6px 10px; border: 1px solid #c3c3c3; border-bottom-color: #929292; text-align: left; #gradient > .vertical(@white, #dadada); }
+.table-timeline th.head-time { text-align: center; }
+.table-timeline th[data-sort] { cursor: pointer; }
+.table-timeline th[data-sort="status"] { white-space: nowrap; }
+.table-timeline th[data-sort="status"] .sort { margin-left: 5px; }
+.table-timeline td { padding: 8px; border-width: 0 0 1px 1px; border-style: solid; border-color: @grayLighter; line-height: normal; }
+.table-timeline td:first-child { border-left: 0; }
+.table-timeline .time-cell { padding: 0; width: 5%; }
+.table-timeline .timebar-block { position: relative; height: 26px; }
+.table-timeline .timebar { .border-radius(@baseBorderRadius); position: absolute; z-index: 1000; top: 0; left: 0; height: 26px; border-width: 1px; border-style: solid; .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.5)"); cursor: pointer; .opacity(80); box-sizing: border-box; }
+.table-timeline .timebar.worktime { #gradient > .vertical-four-colors(@timebarWorkTime-startColor, 0%, @timebarWorkTime-midColor1, 50%, @timebarWorkTime-midColor2, 50%, @timebarWorkTime-endColor, 100%, @timebarWorkTime-svg); border-color: @timebarWorkTime-border; }
+.table-timeline .timebar.editedtime { #gradient > .vertical-four-colors(@timebarEditedTime-startColor, 0%, @timebarEditedTime-midColor1, 50%, @timebarEditedTime-midColor2, 50%, @timebarEditedTime-endColor, 100%, @timebarEditedTime-svg); border-color: @timebarEditedTime-border; }
+.table-timeline .user-info { float: left; width: 85%; }
+.table-timeline .user-avatar { float: left; margin-right: 10px; }
+.table-timeline .user-name { color: @black; font-weight: bold; }
+.table-timeline .user-name:hover { color: @linkColor; text-decoration: none; }
+.table-timeline .sorting-asc,
+.table-timeline .sorting-desc { background: #dbdbdb; }
+.table-timeline .statusinfo { margin-top: 3px; }
+.table-timeline .statusinfo-atention { color: #f0704b; }
+.table-timeline .status-additional { .border-radius(@borderRadiusSmall); position: relative; float: right; margin-top: 7px; width: 18px; border-width: 1px; border-style: solid; cursor: pointer; }
+.table-timeline .status-additional span { display: block; height: 18px; position: relative; z-index: 1000; }
+.table-timeline .status-additional.type1 { border-color: @StatusAdditionalType1-border; #gradient > .vertical(@StatusAdditionalType1-startColor, @StatusAdditionalType1-endColor); }
+.table-timeline .status-additional.type2 { border-color: @StatusAdditionalType2-border; #gradient > .vertical(@StatusAdditionalType2-startColor, @StatusAdditionalType2-endColor); }
+.table-timeline .status-additional:after{ position: absolute; top: 3px; left: 7px; width: 4px; height: 13px; background: url(../images/glyphicons.png) no-repeat 0 0; content: ''; }
+.table-timeline .status-additional.type1:after { background-position: 0 0; }
+.table-timeline .status-additional.type2:after { background-position: 0 -15px; }
+.timebar-message { display: block; margin-bottom: 5px; font-weight: bold; }
+
+// Icons
+// -------------------------
+.ico-status { margin: 0 auto; width: 10px; height: 10px; background: url(../images/ico-status.png) no-repeat 0 0; text-indent: -5000px; }
+.ico-status-online { background-position: 0 0; }
+.ico-status-offline { background-position: 0 -26px; }
+.ico-status-onbreak { background-position: 0 -13px; }
+.ico-status-atention { background-position: 0 -39px; }
