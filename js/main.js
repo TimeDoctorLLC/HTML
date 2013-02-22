@@ -1,14 +1,3 @@
-$(document).ready(function () {
-
-// TOOLTIP
-    $('.tooltipster').tooltipster({
-        maxWidth: 250,
-        offsetX: -1,
-        offsetY: -3
-    });
-
-});
-
 var dashApp = angular.module('dashApp', []);
 
 dashApp.filter('timeline', function () {
@@ -61,5 +50,12 @@ function UsersDailyCtrl($scope, $http) {
         $scope.usersdaily.list = data;
     });
 
+    // TOOLTIP
+    // todo: find a better place for it
+    $('.tooltipster').tooltipster({
+        maxWidth: 250,
+        offsetX: -1,
+        offsetY: -3
+    });
 
 }
