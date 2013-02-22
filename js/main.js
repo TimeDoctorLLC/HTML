@@ -26,82 +26,6 @@ dashApp.filter('range', function () {
     };
 });
 
-dashApp.factory('UsersDaily', function () {
-    var UsersDaily = {};
-    UsersDaily.list =
-        [
-            {"status": "offline", "statusinfo": "Offline", "name": "Loreen Smith", "avatar": "images/avatars/avatar-LoreenSmith.jpg", "totaltime": "9h 7m", "timeline": [
-                {"timetype": "worktime", "start": 0, "length": 700, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "editedtime", "start": 1000, "length": 900, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "worktime", "start": 23000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 31000, "length": 900, "total": "0:05", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 35000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 42000, "length": 1670, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 48000, "length": 1900, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]},
-            {"status": "atention", "statusinfo": "User is not using the software", "name": "Rob Rawson", "avatar": "images/avatars/avatar-RobRawson.jpg", "totaltime": "5h 0m", "timeline": [
-                {"timetype": "worktime", "start": 1000, "length": 1300, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "editedtime", "start": 12000, "length": 6600, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "worktime", "start": 30000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 38000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 48000, "length": 9070, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 60000, "length": 2200, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]},
-            {"status": "online", "statusinfo": "Current task I’m working on", "name": "Loreen Smith", "avatar": "images/avatars/avatar-LoreenSmith.jpg", "totaltime": "9h 7m", "timeline": [
-                {"timetype": "worktime", "start": 0, "length": 7500, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "worktime", "start": 9000, "length": 7400, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "worktime", "start": 23000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 31000, "length": 900, "total": "0:05", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "editedtime", "start": 35000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 42000, "length": 1670, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 48000, "length": 1900, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]},
-            {"status": "onbreak", "statusinfo": "On a break", "name": "Rob Rawson", "avatar": "images/avatars/avatar-RobRawson.jpg", "totaltime": "5h 0m", "timeline": [
-                {"timetype": "worktime", "start": 1000, "length": 1300, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "worktime", "start": 12000, "length": 6600, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "editedtime", "start": 30000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 38000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 48000, "length": 9070, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 60000, "length": 2200, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]},
-            {"status": "offline", "statusinfo": "Offline", "name": "Loreen Smith", "avatar": "images/avatars/avatar-LoreenSmith.jpg", "additionalstatus": {"icon": "type1", "text": "Lorem ipsum."}, "totaltime": "9h 7m", "timeline": [
-                {"timetype": "worktime", "start": 0, "length": 7500, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "worktime", "start": 9000, "length": 7400, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "editedtime", "start": 23000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 31000, "length": 900, "total": "0:05", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "editedtime", "start": 35000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 42000, "length": 1670, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 48000, "length": 1900, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]},
-            {"status": "atention", "statusinfo": "User is not using the software", "name": "Rob Rawson", "avatar": "images/avatars/avatar-RobRawson.jpg", "additionalstatus": {"icon": "type1", "text": "Lorem ipsum dolor sit."}, "totaltime": "5h 0m", "timeline": [
-                {"timetype": "worktime", "start": 1000, "length": 1300, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "worktime", "start": 12000, "length": 6600, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "worktime", "start": 30000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 38000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 48000, "length": 9070, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 60000, "length": 2200, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]},
-            {"status": "online", "statusinfo": "Current task I’m working on", "name": "Loreen Smith", "avatar": "images/avatars/avatar-LoreenSmith.jpg", "totaltime": "9h 7m", "timeline": [
-                {"timetype": "worktime", "start": 0, "length": 7500, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "worktime", "start": 9000, "length": 7400, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "worktime", "start": 23000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 31000, "length": 900, "total": "0:05", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 35000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 42000, "length": 1670, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 48000, "length": 1900, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]},
-            {"status": "onbreak", "statusinfo": "On a break", "name": "Rob Rawson", "avatar": "images/avatars/avatar-RobRawson.jpg", "additionalstatus": {"icon": "type2", "text": "Lorem ipsum dolor."}, "totaltime": "5h 0m", "timeline": [
-                {"timetype": "worktime", "start": 1000, "length": 1300, "total": "2:10", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."},
-                {"timetype": "worktime", "start": 12000, "length": 6600, "total": "3:00", "message": "Lorem ipsum dolor sit amet."},
-                {"timetype": "worktime", "start": 30000, "length": 3000, "total": "1:05", "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium illum error ratione."},
-                {"timetype": "worktime", "start": 38000, "length": 5000, "total": "1:00", "message": "Lorem ipsum dolor sit."},
-                {"timetype": "worktime", "start": 48000, "length": 9070, "total": "1:15", "message": "Lorem ipsum dolor sit amet, consectetur."},
-                {"timetype": "worktime", "start": 60000, "length": 2200, "total": "0:40", "message": "Lorem ipsum dolor sit."}
-            ]}
-        ]
-    return UsersDaily;
-})
-
 dashApp.filter('isTwoHourRange', function() {
     return function(input, hour) {
         hour = parseInt(hour)
@@ -129,6 +53,13 @@ dashApp.directive('twoHoursTimeBar', function () {
 });
 
 
-function UsersDailyCtrl($scope, UsersDaily) {
-    $scope.usersdaily = UsersDaily;
+function UsersDailyCtrl($scope, $http) {
+    // init as empty
+    $scope.usersdaily = {};
+
+    $http.get('/data/team-week.json').success(function(data) {
+        $scope.usersdaily.list = data;
+    });
+
+
 }
