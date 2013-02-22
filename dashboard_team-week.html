@@ -112,12 +112,12 @@
 				<div class="pull-right">
 					<div class="btn-group">
 						<button class="btn btn-large"><i class="icon-caret-left"></i></button>
-						<button class="btn btn-large">November 20</button>
+						<button class="btn btn-large">October 24 - October 30</button>
 						<button class="btn btn-large disabled"><i class="icon-caret-right"></i></button>
 					</div>
 					<div class="btn-group" data-toggle="buttons-radio">
-						<button class="btn btn-large active">Day</button>
-						<button class="btn btn-large">Week</button>
+						<button class="btn btn-large">Day</button>
+						<button class="btn btn-large active">Week</button>
 					</div>
 				</div>
 			</div>
@@ -126,24 +126,19 @@
 	<hr>
 	<div class="container-fluid" ng-controller="UsersDailyCtrl">
 		<div class="well well-small">
-			<table class="table-timeline table-timeline-day table-hover table-sort">
+			<table class="table-timeline table-timeline-week table-hover table-sort">
 			<thead>
 		    	<tr>
 		    	    <th class="head-sort" data-sort="status">... <span class="sort icon-sort"></span></th>
 		    	    <th>Names</th>
 		    	    <th>Time worked</th>
-		    	    <th class="head-timeline">2am</th>
-		    	    <th class="head-timeline">4am</th>
-		    	    <th class="head-timeline">6am</th>
-		    	    <th class="head-timeline">8am</th>
-		    	    <th class="head-timeline">10am</th>
-		    	    <th class="head-timeline">12pm</th>
-		    	    <th class="head-timeline">2pm</th>
-		    	    <th class="head-timeline">4pm</th>
-		    	    <th class="head-timeline">6pm</th>
-		    	    <th class="head-timeline">8pm</th>
-		    	    <th class="head-timeline">10pm</th>
-		    	    <th class="head-timeline">12am</th>
+		    	    <th class="head-timeline">Mon</th>
+		    	    <th class="head-timeline">Tue</th>
+		    	    <th class="head-timeline">Wen</th>
+		    	    <th class="head-timeline">Thu</th>
+		    	    <th class="head-timeline">Fri</th>
+		    	    <th class="head-timeline">Sat</th>
+		    	    <th class="head-timeline">Sun</th>
 		    	</tr>
 		    </thead>
             <tbody>
@@ -155,18 +150,41 @@
                         <a href="#" class="user-name">{{user.name}}</a>
                         <div class="status-info status-info-{{user.status}}">{{user.statusinfo}}</div>
                     </div>
-                    <span ng-show="user.additionalstatus" class="ico-status-additional {{user.additionalstatus.icon}} tooltipster" title="{{user.additionalstatus.text}}">&nbsp;</span>
                 </td>
                 <td>{{user.totaltime}}</td>
                 <td class="cell-timeline">
                 	<div class="timebar-holder">
-                    	<div ng-repeat="time_entry in user.timeline"
-                         class="timebar timebar-{{time_entry.timetype}} tooltipster"
-                         style="width: {{time_entry.length / 72}}%; left: {{time_entry.start / 72}}%;"
-                         title="<p><b>{{time_entry.message}}</b></p> {{time_entry.total}}"></div>
+                		<div class="timebar timebar-worktime tooltipster" style="width: 15.765765675%;" title="4:25"></div>
+                		<div class="timebar-block"></div>
                 	</div>
                 </td>
-                <td ng-repeat="n in [] | range:11" class="cell-timeline"></td>
+                <td><span ng-show="user.additionalstatus" class="ico-status-additional {{user.additionalstatus.icon}} tooltipster" title="{{user.additionalstatus.text}}"></span></td>
+                <td class="cell-timeline">
+                	<div class="timebar-holder timebar-double">
+                		<div class="timebar timebar-worktime tooltipster" style="width: 41.666666666666664%;" title="4:25"></div>
+                		<div class="timebar timebar-editedtime tooltipster" style="width: 17.87687676%; left: 41.666666666666664%" title="<p>Edited!</p> <b>No reason.</b>"></div>
+                		<div class="timebar-block"></div>
+                	</div>
+                </td>
+                <td class="cell-timeline">
+                	<div class="timebar-holder">
+                		<div class="timebar-block"></div>
+                	</div>
+                </td>
+                <td class="cell-timeline">
+                	<div class="timebar-holder timebar-double">
+                		<div class="timebar timebar-worktime tooltipster" style="width: 44.654657688%;" title="4:25"></div>
+                		<div class="timebar timebar-editedtime tooltipster" style="width: 55.345342312%; left: 44.654657688%;" title="<p>Edited!</p> <b>No reason.</b>"></div>
+                		<div class="timebar-block"></div>
+                	</div>
+                </td>
+                <td class="cell-timeline">
+                	<div class="timebar-holder">
+                		<div class="timebar timebar-worktime tooltipster" style="width: 100%;" title="4:25"></div>
+                		<div class="timebar-block"></div>
+                	</div>
+                </td>
+                <td class="cell-timeline"></td>
             </tr>
             </tbody>
 			</table>
