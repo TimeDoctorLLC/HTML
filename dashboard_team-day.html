@@ -158,15 +158,9 @@
                     <span ng-show="user.additionalstatus" class="ico-status-additional {{user.additionalstatus.icon}} tooltipster" title="{{user.additionalstatus.text}}">&nbsp;</span>
                 </td>
                 <td>{{user.totaltime}}</td>
-                <td class="cell-timeline">
-                	<div class="timebar-holder">
-                    	<div ng-repeat="time_entry in user.timeline"
-                         class="timebar timebar-{{time_entry.timetype}} tooltipster"
-                         style="width: {{time_entry.length / 72}}%; left: {{time_entry.start / 72}}%;"
-                         title="<p><b>{{time_entry.message}}</b></p> {{time_entry.total}}"></div>
-                	</div>
+                <td ng-repeat="n in [] | range:12" class="cell-timeline">
+                    <div class="timebar-holder" two-hours-time-bar hour="{{n*2}}" timeline="user.timeline"></div>
                 </td>
-                <td ng-repeat="n in [] | range:11" class="cell-timeline"></td>
             </tr>
             </tbody>
 			</table>
