@@ -52,10 +52,12 @@ function UsersDailyCtrl($scope, $http) {
 
     // TOOLTIP
     // todo: find a better place for it
-    $('.tooltipster').tooltipster({
-        maxWidth: 250,
-        offsetX: -1,
-        offsetY: -3
-    });
+    setTimeout(function(){
+        $('.tooltipster').tooltipster({
+            maxWidth: 250,
+            offsetX: -1,
+            offsetY: -3
+        });
+    }, 1000);
 
 }
