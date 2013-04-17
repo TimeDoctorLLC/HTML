@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeDoctor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- style -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/style.min.css" media="screen">
+    <link rel="stylesheet" href="css/tooltipster.css" media="screen">
+    <link rel="stylesheet" href="css/responsive.css" media="screen">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.0.2/css/bootstrap-datepicker.min.css" media="screen">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/0.7.2/angular-strap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.0.2/js/bootstrap-datepicker.min.js"></script>
+    <script src="js/jquery.jclock.js"></script>
+    <script src="js/jquery.tooltipster.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<div id="wrapper" ng-app="dashApp">
+    <!-- navigation -->
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <a class="brand" href="/"><img src="images/logo-timedoctor.png" width="31" height="29" alt="TimeDoctor"></a>
+            <!-- main navigation -->
+            <ul class="nav">
+                <li class="active"><a href="#">Productivity</a></li>
+                <li><a href="#">Tasks</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hours Worked <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Screenshots</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- // main navigation -->
+            <ul class="nav navbar-list pull-right">
+                <!-- date/time -->
+                <li class="navbar-text hidden-tablet">
+                    <span class="current-date"></span>
+                    <span class="current-time"></span>
+                </li>
+                <li class="divider-vertical hidden-tablet"></li>
+                <!-- // date/time -->
+                <!-- quick access -->
+                <li><a href="#"><b>Rob Rawson</b></a></li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Global Workforce <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                    </ul>
+                </li>
+                <!-- // quick access -->
+            </ul>
+        </div>
+    </div>
+    <!-- // navigation -->
+    <!-- content -->
+    <ng-view></ng-view>
+
+    <!-- // content -->
+    <!-- footer -->
+    <div class="footer-holder"></div>
+    <div id="footer">
+        <div class="container-fluid">
+            <span class="pull-left"><img src="images/logo-timedoctor_footer.png" width="117" height="29" alt="TimeDoctor"></span>
+            <span class="pull-right">Copyright &copy; 2010 Time Doctor Software</span>
+        </div>
+    </div>
+    <!-- // footer -->
+</div><!-- // wrapper -->
+</body>
+</html>

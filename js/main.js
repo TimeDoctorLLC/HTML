@@ -1,10 +1,11 @@
-var dashApp = angular.module('dashApp', []);
-
-dashApp.filter('timeline', function () {
-    return function (data) {
-        return '<span>1</span>1';
+var dashApp = angular.module('dashApp', ['$strap.directives']).
+    config(function ($routeProvider) {
+        $routeProvider.
+            when("/daily",  {templateUrl: "/partials/dash-daily.html", controller: "UsersDailyCtrl"}).
+            when("/weekly", {templateUrl: "/partials/dash-weekly.html", controller: "UsersWeeklyCtrl"}).
+            otherwise({redirectTo: '/daily'});
     }
-})
+);
 
 dashApp.filter('range', function () {
     return function (input, total) {
@@ -41,13 +42,55 @@ dashApp.directive('twoHoursTimeBar', function () {
     };
 });
 
+function UsersDailyCtrl($scope, $http, $location) {
 
-function UsersDailyCtrl($scope, $http) {
+    // todo: rewrite
+    $scope.updateData = function (data) {
+        $scope.usersdaily.list = data;
+
+        // TOOLTIP
+        // todo: find a better place for it
+        setTimeout(function(){
+            $('.tooltipster').tooltipster({
+                maxWidth: 250,
+                offsetX: -1,
+                offsetY: -3
+            });
+            var endDate = new Date(2012,1,25);
+            $('#date-end')
+                .datepicker()
+                .on('changeDate', function(ev){
+                    endDate = new Date(ev.date);
+                    $('#date-end').datepicker('hide');
+                    $('#date-end').text($('#date-end').data('date'));
+                });
+        }, 500);
+    }
+
+    $scope.reportView = 'daily';
+
     // init as empty
     $scope.usersdaily = {};
 
-    $http.get('/data/team-week.json').success(function(data) {
-        $scope.usersdaily.list = data;
+    $http.get('/data/team-day.json').success(function(data) {
+        $scope.updateData(data);
+    });
+
+    $scope.change = function (view) {
+        $http.get('/data/team-day.json?date=' + $scope.datepicker.date).success(function (data) {
+            $scope.updateData(data);
+        });
+    };
+}
+
+function UsersWeeklyCtrl($scope, $http, $location) {
+    $scope.reportView = 'weekly';
+
+    // init as empty
+    $scope.usersWeekly = {};
+
+    $http.get('/data/team-day.json').success(function(data) {
+        $scope.usersWeekly.list = data;
     });
 
     // TOOLTIP

@@ -124,7 +124,7 @@
 		</div>
 	</div>
 	<hr>
-	<div class="container-fluid" ng-controller="UsersDailyCtrl">
+	<div class="container-fluid" ng-controller="UsersWeeklyCtrl">
 		<div class="well well-small">
 			<table class="table-timeline table-timeline-week table-hover table-sort">
 			<thead>
@@ -142,7 +142,7 @@
 		    	</tr>
 		    </thead>
             <tbody>
-            <tr ng-repeat="user in usersdaily.list">
+            <tr ng-repeat="user in usersWeekly.list">
                 <td><span class="ico-status ico-status-{{user.status}}">{{user.status}}</span></td>
                 <td>
                     <div class="user-info">
